@@ -1,0 +1,2 @@
+#!/bin/bash
+(ls -a | sort -f | awk '{if($0=="."||$0=="..") print $0; else files[NR]=$0} END {for(i=1;i<=NR;i++) if(files[i]!="."&&files[i]!="..") printf("%s%s", files[i] (if(system("[ -d \"" files[i] "\" ]")==0) ? "/" : ""), (i==NR) ? "\n" : ",")}')
